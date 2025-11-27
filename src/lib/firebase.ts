@@ -11,10 +11,6 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Logika Kritis: Mencegah Double Initialization
-// Next.js punya fitur Fast Refresh. Kalau kita tidak cek 'getApps', 
-// setiap kali kamu save file, dia akan mencoba login ulang ke Firebase dan error.
-
 let app;
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
