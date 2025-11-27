@@ -69,7 +69,7 @@ export default function RegisterScreen() {
 
             await setDoc(doc(db, "users", userData.uid), userData);
             console.log("Login Berhasil")
-
+            router.push('/login')
         } catch (e: any) {
             console.error("Firebase Error:", e)
             setGlobalError(e.message);
@@ -181,7 +181,7 @@ export default function RegisterScreen() {
                             <FormItem>
                                 <FormLabel>Password</FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input type="password" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -194,7 +194,7 @@ export default function RegisterScreen() {
                             <FormItem>
                                 <FormLabel>Confirm Password</FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input type="password" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

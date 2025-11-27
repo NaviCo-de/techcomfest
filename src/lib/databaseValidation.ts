@@ -9,7 +9,7 @@ export const loginSchema = z.object({
 export const registerSchema = loginSchema.extend({
     nama: z.string().min(1, "Nama tidak boleh kosong"),
     tanggalLahir: z.date({
-       message: "Tanggal lahir wajib diisi" 
+       message: "Tanggal lahir wajib diisi"
     })
     .refine((date) => {
         const today = new Date()
